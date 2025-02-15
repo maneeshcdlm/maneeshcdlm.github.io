@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection CTF Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .images img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            border-radius: 10px;
+        }
+        .images img:hover {
+            border-color: blue;
+        }
+    </style>
+    <script>
+        function checkSelection(imageId) {
+            if (imageId === "correct") {
+                alert("Congratulations! You found the correct image. FLAG{image_ctf_win}");
+            } else {
+                alert("Wrong choice! Try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Selection CTF Challenge</h1>
+        <p>Select the correct image to reveal the flag!</p>
+        <div class="images">
+            <img src="image1.jpg" alt="Image 1" onclick="checkSelection('wrong1')">
+            <img src="image2.jpg" alt="Image 2" onclick="checkSelection('correct')">
+            <img src="image3.jpg" alt="Image 3" onclick="checkSelection('wrong2')">
+        </div>
+    </div>
+</body>
+</html>
