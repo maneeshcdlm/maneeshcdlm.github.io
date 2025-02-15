@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium HTML CTF Challenge</title>
+    <script>
+        function checkFlag() {
+            let input = document.getElementById("flagInput").value;
+            if (input === "FLAG{hidden_in_script}") {
+                alert("Correct! You found the flag.");
+            } else {
+                alert("Incorrect flag. Try again!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Medium CTF Challenge!</h1>
+    <p>Your task is to find the hidden flag and enter it below.</p>
+    
+    <input type="text" id="flagInput" placeholder="Enter flag here">
+    <button onclick="checkFlag()">Submit</button>
+    
+    <!-- The answer might be closer than you think... -->
+    
+</body>
+</html>
