@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body style="background-color:powderblue;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge - Login Bypass</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .login-box { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+        .hint { color: red; font-size: 14px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>CTF Challenge: Can You Bypass the Login?</h1>
+    <div class="login-box">
+        <p>Enter the credentials to proceed:</p>
+        <input type="text" id="username" placeholder="Username"> <br><br>
+        <input type="password" id="password" placeholder="Password"> <br><br>
+        <button onclick="checkLogin()">Login</button>
+
+        <a href="hint.html">
+    <button>HINT</button>
+</a>
+        <p id="message"></p>
+    </div>
+    
+    <script>
+        function checkLogin() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            
+            // Hardcoded credentials (Security Flaw!)
+            if (user === "admin" && pass === "SuperSecret123") {
+                document.getElementById("message").innerHTML = "Access Granted! Flag: FLAG{HARD_CODED_PASS}";
+            } else {
+                document.getElementById("message").innerHTML = "Access Denied!";
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
